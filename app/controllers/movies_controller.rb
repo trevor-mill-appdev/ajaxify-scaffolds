@@ -1,5 +1,15 @@
 class MoviesController < ApplicationController
-  before_action :set_movie, only: %i[ show edit update destroy ]
+  before_action :set_movie, only: %i[ 
+    show
+    edit
+    update
+    destroy
+    edit_title
+    edit_duration
+    edit_year
+    edit_description
+    edit_director_id
+  ]
 
   # GET /movies or /movies.json
   def index
@@ -53,6 +63,7 @@ class MoviesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to movies_url, notice: "Movie was successfully destroyed." }
       format.json { head :no_content }
+      format.js 
     end
   end
 
